@@ -11,7 +11,7 @@ const Spotify = {
 
         if (tokenInURL && expiryTime) {
             //setting access token and expiry time variables
-            accessToken = tokenInURL;
+            accessToken = tokenInURL[1];
             const expiresIn = Number(expiryTime[1]);
 
             //setting the function which will reet the access token when it expires
@@ -30,14 +30,22 @@ const Spotify = {
 
     search(term) {
         accessToken = Spotify.getAccessToken();
+        console.log(accessToken);
         return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
             method: 'GET',
-            headers: {Authorization: `bearer ${accessToken}`},
+            headers: { Authorization: `Bearer ${accessToken}` },
         })
-        .then((response) => response.json())
+        .then((response) => {
+            if (!response.ok) {
+                console.error(`Request failed with status ${response.status}`);
+                return [];
+            }
+            return response.json();
+        })
         .then((jsonResponse) => {
-            if (!jsonResponse) {
-                console.error("Response error");
+            if (!jsonResponse.tracks || !jsonResponse.tracks.items) {
+                console.error("No tracks found or tracks are undefined");
+                return [];
             }
             return jsonResponse.tracks.items.map((t) => ({
                 id: t.id,
@@ -45,10 +53,44 @@ const Spotify = {
                 artist: t.artists[0].name,
                 album: t.album.name,
                 uri: t.uri,
-
             }));
+        })
+        .catch((error) => {
+            console.error("Network or other error occurred:", error);
+            return [];
         });
+        
     },
+
+    savePlaylist(name, trackUris) {
+        if(!name || !trackUris || trackUris === 0) return;
+        const aToken = Spotify.getAccessToken();
+        const header = { Authorization: `Bearer ${aToken}` };
+        let userId;
+        return fetch('https://api.spotify.com/v1/me', {headers: header})
+        .then((response) => response.json())
+        .then((jsonResponse) => {
+            userId = jsonResponse.id;
+            let playlistId;
+            return fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+                headers: header,
+                method: 'post',
+                body: JSON.stringify({name: name}),
+            })
+            .then((response) => response.json())
+            .then((jsonResponse) => {
+                playlistId = jsonResponse.id;
+                return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+                    headers: header,
+                    method: 'post',
+                    body: JSON.stringify({uris: trackUris})
+                })
+            });
+
+        });
+
+},
+
 };
 
 export {Spotify};
