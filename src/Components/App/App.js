@@ -3,7 +3,7 @@ import styles from "./App.module.css";
 import SearchResults from "../SearchResults/searchresults";
 import Playlist from "../Playlist/playlist";
 import SearchBar from "../SearchBar/searchbar";
-import {Spotify, spotify} from "../util/spotify";
+import {Spotify} from "../util/spotify";
 
 
 function App () {
