@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/jammming/static/css/main.2364b071.css",
+    "main.js": "/jammming/static/js/main.736a50d9.js",
+    "static/media/aaron-burden-KOMUfRQAdrI-unsplash.jpg": "/jammming/static/media/aaron-burden-KOMUfRQAdrI-unsplash.65351403fa8e5691bae5.jpg",
+    "index.html": "/jammming/index.html",
+    "main.2364b071.css.map": "/jammming/static/css/main.2364b071.css.map",
+    "main.736a50d9.js.map": "/jammming/static/js/main.736a50d9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2364b071.css",
+    "static/js/main.736a50d9.js"
+  ]
+}
