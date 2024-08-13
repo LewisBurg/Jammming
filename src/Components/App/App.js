@@ -3,6 +3,7 @@ import styles from "./App.module.css";
 import SearchResults from "../SearchResults/searchresults";
 import Playlist from "../Playlist/playlist";
 import SearchBar from "../SearchBar/searchbar";
+import {Spotify, spotify} from "../util/spotify";
 
 
 function App () {
@@ -69,6 +70,7 @@ function App () {
   }
 
   function search(term) {
+    Spotify.search(term).then((result) => setSearchResults(result));
     console.log(term);
   }
 
