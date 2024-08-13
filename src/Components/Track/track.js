@@ -5,10 +5,18 @@ function Track (props) {
 
   function renderAction() {
     if (props.isRemoval) {
-      return <button className="Track-action">-</button>
+      return <button className={styles["Track-action"]} onClick={passTrackToRemove}>-</button>
     } else {
-      return <button className="Track-action">+</button>
+      return <button className={styles["Track-action"]} onClick={passTrack}>+</button>
     }
+  }
+
+  function passTrack() {
+    props.onAdd(props.track);
+  }
+
+  function passTrackToRemove() {
+    props.onRemove(props.track);
   }
 
     return (
@@ -20,6 +28,7 @@ function Track (props) {
           <p>{props.track.artist} | {props.track.album}</p>
         </div>
         {/* <button class="Track-action"><!-- + or - will go here --></button> */}
+        {renderAction()}
       </div>
     );
 }
