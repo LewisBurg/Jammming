@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styles from "./App.module.css";
 import SearchResults from "../SearchResults/searchresults";
 import Playlist from "../Playlist/playlist";
+import SearchBar from "../SearchBar/searchbar";
 
 
 function App () {
@@ -59,6 +60,18 @@ function App () {
     setPlaylistTracks(existingTrack);
   };
 
+  function updatePlaylistName(name) {
+    setPlaylistName(name);
+  }
+
+  function savePlaylist() {
+    const trackURIs = playlistTracks.map((t) => t.uri);
+  }
+
+  function search(term) {
+    console.log(term);
+  }
+
     return (
         <div>
         <h1>
@@ -66,6 +79,7 @@ function App () {
         </h1>
         <div className={styles.App}>
           {/* <!-- Add a SearchBar component --> */}
+          <SearchBar onSearch={search}/>
           
           <div className={styles['App-playlist']}>
             {/* <!-- Add a SearchResults component --> */}
@@ -74,7 +88,9 @@ function App () {
             <Playlist 
               playlistName={playlistName} 
               playlistTracks={playlistTracks}
-              onRemove={removeTrack}/>
+              onRemove={removeTrack}
+              onNameChange={updatePlaylistName}
+              onSave={savePlaylist}/>
           </div>
         </div>
       </div>
