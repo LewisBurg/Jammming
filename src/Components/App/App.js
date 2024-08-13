@@ -81,7 +81,7 @@ function App () {
     return (
         <div>
         <h1>
-          Ja<span className={styles.highlight}>mmm</span>ing
+          Riddi<span className={styles.highlight}>mmm</span>Selecta
         </h1>
         <div className={styles.App}>
           {/* <!-- Add a SearchBar component --> */}

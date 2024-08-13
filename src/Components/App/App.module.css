@@ -18,7 +18,7 @@ h1 {
 }
 
 h1 .highlight {
-  color: #6c41ec;
+  color: #3785ce;
 }
 
 h2 {
@@ -29,7 +29,9 @@ h2 {
 .App {
   height: 100%;
   padding: 0 17% 10% 17%;
-  background-image: url('./background_photo_desktop.a0687f3fe6f1303a2d18.jpg');
+  background: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), /* Dark tint */
+        url('./aaron-burden-KOMUfRQAdrI-unsplash.jpg'); /* Background image */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

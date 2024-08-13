@@ -9,7 +9,7 @@ function Playlist(props) {
   }
 
   return (
-    <div className="Playlist">
+    <div className={styles.Playlist}>
       <input defaultValue={"New Playlist"} onChange={handleNameChange} />
 
       {/* <!-- Add a TrackList component --> */}
