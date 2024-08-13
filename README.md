@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Jammming Spotify Playlist creator
 
-This project allows you to access the spotify databases using their API, it will let you login in to your spotify and search artist/albums/songs to create playlists, then you can submit these playlist to your spotify acount to use.
+This project allows you to access the spotify databases using their API, it will let you login in to your spotify and search artist/albums/songs to create playlists, then you can submit these playlist to your spotify account to use.
 
 ## Available Scripts
 
