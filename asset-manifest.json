@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Jammming/static/css/main.f1e54e64.css",
-    "main.js": "/Jammming/static/js/main.7e65f821.js",
-    "static/media/aaron-burden-KOMUfRQAdrI-unsplash.jpg": "/Jammming/static/media/aaron-burden-KOMUfRQAdrI-unsplash.65351403fa8e5691bae5.jpg",
-    "index.html": "/Jammming/index.html",
-    "main.f1e54e64.css.map": "/Jammming/static/css/main.f1e54e64.css.map",
-    "main.7e65f821.js.map": "/Jammming/static/js/main.7e65f821.js.map"
+    "main.css": "/riddimmmselecta/static/css/main.c2e51515.css",
+    "main.js": "/riddimmmselecta/static/js/main.20a112c4.js",
+    "static/media/aaron-burden-KOMUfRQAdrI-unsplash.jpg": "/riddimmmselecta/static/media/aaron-burden-KOMUfRQAdrI-unsplash.65351403fa8e5691bae5.jpg",
+    "index.html": "/riddimmmselecta/index.html",
+    "main.c2e51515.css.map": "/riddimmmselecta/static/css/main.c2e51515.css.map",
+    "main.20a112c4.js.map": "/riddimmmselecta/static/js/main.20a112c4.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1e54e64.css",
-    "static/js/main.7e65f821.js"
+    "static/css/main.c2e51515.css",
+    "static/js/main.20a112c4.js"
   ]
 }
