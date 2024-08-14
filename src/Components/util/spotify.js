@@ -1,5 +1,5 @@
 let accessToken;
-const redirectUrl = "https://lewisburg.github.io/Jammming";
+const redirectUrl = "https://lewisburg.github.io/Jammming/";
 const clientID = "5f82ee64102a46cc97a5a58eb698b777";
 
 const Spotify = {
