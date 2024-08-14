@@ -25,6 +25,8 @@ function App () {
 
   const [playlistName, setPlaylistName] = useState("Example playlist Name");
 
+  const [userSearchResults, setUserSearchResults] = useState([]);
+
   const [playlistTracks, setPlaylistTracks] = useState([
     {
       name: "Example playlist Name 1",
@@ -40,15 +42,25 @@ function App () {
     }
   ]);
 
-  function addTrack (track) {
+  function addTrack(track) {
+    // Check if the track already exists in the playlist
     const existingTrack = playlistTracks.find((t) => t.id === track.id);
-    const newTrack = playlistTracks.concat(track);
+  
     if (existingTrack) {
-      console.log("Track already exists")
+      console.log("Track already exists");
     } else {
-      setPlaylistTracks(newTrack);
+      // Add the track to the playlist
+      const newTrackList = playlistTracks.concat(track);
+      setPlaylistTracks(newTrackList);
+  
+      // Filter out the added track from the search results
+      const updatedSearchResults = userSearchResults.filter(
+        (searchTrack) => searchTrack.id !== track.id
+      );
+      setUserSearchResults(updatedSearchResults); // assuming there's a setter for user search results
     }
-  };
+  }
+  
 
   function removeTrack(track) {
     const existingTrack = playlistTracks.filter((t) => t.id !== track.id);
