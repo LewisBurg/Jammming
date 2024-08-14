@@ -37,12 +37,6 @@ function App () {
       artist: "Example Playlist Artist 2",
       album: "Example Playlist Album 2",
       id: 2,
-    },
-    {
-      name: "Example playlist Name 3",
-      artist: "Example Playlist Artist 3",
-      album: "Example Playlist Album 3",
-      id: 3,
     }
   ]);
 
