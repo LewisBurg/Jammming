@@ -7,11 +7,13 @@
 }
 
 .SearchBar input {
+    font-family: 'poppins';
     width: 287px;
     padding: .88rem 0;
     border: 3px solid #3da8e6;
     border-radius: 54px;
-    margin-bottom: 2.22rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
     color: #010c3f;
     text-align: center;
     font-size: 1rem;
@@ -23,10 +25,11 @@
 }
 
 .SearchButton {
+    font-family: 'poppins';
     cursor: pointer;
     width: 8.11rem;
     padding: .77rem 0;
-    margin-bottom: -3rem;
+    margin-bottom: -4rem;
     border-radius: 54px;
     background-color: #010c3f;
     text-align: center;
@@ -35,6 +38,7 @@
     border: 0px;
     color: #fff;
     font-weight: 500;
+    box-shadow: 0 2px 3px 2px #000000;
 }
 
 .SearchButton:hover {

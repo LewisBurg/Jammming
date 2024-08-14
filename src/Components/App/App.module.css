@@ -2,6 +2,7 @@ body,
 html,
 #root {
   height: 100%;
+  font-family: 'Montserrat';
 }
 
 html {
@@ -9,7 +10,8 @@ html {
 }
 
 h1 {
-  padding: .77rem 0;
+  margin: 5px 0px;
+  padding: 1rem 0;
   background-color: #010c3f;
   text-align: center;
   font-family: 'Poppins', sans-serif;

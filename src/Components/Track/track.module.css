@@ -3,9 +3,12 @@
     align-items: center;
     border-bottom: 1px solid rgba(256, 256, 256, 0.8);
     margin-bottom: 2em;
+    font-family: 'Poppins';
 }
 
 .Track-action {
+    font-family: 'poppins';
+    font-weight: bold;
     cursor: pointer;
     padding: 4rem 0;
     font-size: 1.5rem;
