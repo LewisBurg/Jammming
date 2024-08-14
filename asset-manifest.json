@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/riddimmmselecta/static/css/main.c52e9a92.css",
+    "main.css": "/riddimmmselecta/static/css/main.865031a1.css",
     "main.js": "/riddimmmselecta/static/js/main.0f58d829.js",
     "static/media/aaron-burden-KOMUfRQAdrI-unsplash.jpg": "/riddimmmselecta/static/media/aaron-burden-KOMUfRQAdrI-unsplash.65351403fa8e5691bae5.jpg",
     "index.html": "/riddimmmselecta/index.html",
-    "main.c52e9a92.css.map": "/riddimmmselecta/static/css/main.c52e9a92.css.map",
+    "main.865031a1.css.map": "/riddimmmselecta/static/css/main.865031a1.css.map",
     "main.0f58d829.js.map": "/riddimmmselecta/static/js/main.0f58d829.js.map"
   },
   "entrypoints": [
-    "static/css/main.c52e9a92.css",
+    "static/css/main.865031a1.css",
     "static/js/main.0f58d829.js"
   ]
 }
