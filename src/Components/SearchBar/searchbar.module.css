@@ -9,7 +9,7 @@
 .SearchBar input {
     width: 287px;
     padding: .88rem 0;
-    border: 1px solid #fff;
+    border: 3px solid #3da8e6;
     border-radius: 54px;
     margin-bottom: 2.22rem;
     color: #010c3f;
@@ -19,16 +19,18 @@
 
 .SearchBar input:focus {
     outline: none;
+    border: 3px solid #22648a;
 }
 
 .SearchButton {
     cursor: pointer;
     width: 8.11rem;
     padding: .77rem 0;
+    margin-bottom: -3rem;
     border-radius: 54px;
     background-color: #010c3f;
     text-align: center;
-    font-size: .833rem;
+    font-size: 1rem;
     transition: background-color .25s;
     border: 0px;
     color: #fff;
