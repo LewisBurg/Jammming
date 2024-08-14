@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Jammming/static/css/main.f1e54e64.css",
-    "main.js": "/Jammming/static/js/main.49af0afe.js",
+    "main.js": "/Jammming/static/js/main.7e65f821.js",
     "static/media/aaron-burden-KOMUfRQAdrI-unsplash.jpg": "/Jammming/static/media/aaron-burden-KOMUfRQAdrI-unsplash.65351403fa8e5691bae5.jpg",
     "index.html": "/Jammming/index.html",
     "main.f1e54e64.css.map": "/Jammming/static/css/main.f1e54e64.css.map",
-    "main.49af0afe.js.map": "/Jammming/static/js/main.49af0afe.js.map"
+    "main.7e65f821.js.map": "/Jammming/static/js/main.7e65f821.js.map"
   },
   "entrypoints": [
     "static/css/main.f1e54e64.css",
-    "static/js/main.49af0afe.js"
+    "static/js/main.7e65f821.js"
   ]
 }
