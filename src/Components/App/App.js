@@ -10,15 +10,15 @@ function App () {
 
   const [searchResults, setSearchResults] = useState([
     {
-      name: "example track name 1",
-      artist: "example track artist 1",
-      album: "example track album 1",
+      name: "Example track name 1",
+      artist: "Example track artist 1",
+      album: "Example track album 1",
       id: 1,
     },
     {
-      name: "example track name 2",
-      artist: "example track artist 2",
-      album: "example track album 2",
+      name: "Example track name 2",
+      artist: "Example track artist 2",
+      album: "Example track album 2",
       id: 2,
     }]
   );
@@ -67,10 +67,13 @@ function App () {
 
   function savePlaylist() {
     const trackURIs = playlistTracks.map((t) => t.uri);
-    Spotify.savePlaylist(playlistName, trackURIs).then(() => {
-      updatePlaylistName("New Playlist");
-      setPlaylistTracks([]);
-    });
+      alert(`${playlistName} was added to your spotify account.`)
+      Spotify.savePlaylist(playlistName, trackURIs).then(() => {
+        updatePlaylistName("New Playlist");
+        setPlaylistTracks([]);
+      });
+    
+     
   }
 
   function search(term) {
