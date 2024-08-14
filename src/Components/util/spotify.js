@@ -1,5 +1,5 @@
 let accessToken;
-const redirectUrl = "http://localhost:3000/";
+const redirectUrl = "https://lewisburg.github.io/jammming";
 const clientID = "5f82ee64102a46cc97a5a58eb698b777";
 
 const Spotify = {
