@@ -1,3 +1,5 @@
+
+
 body,
 html,
 #root {
@@ -43,14 +45,16 @@ h2 {
 }
 
 .App-playlist {
+  margin-left: -70px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 
-@media only screen and (max-width: 1020px) {
+@media only screen and (max-width: 1230px) {
   .App-playlist {
     align-items: center;
     flex-direction: column;
+    margin: 0;
   }
 }

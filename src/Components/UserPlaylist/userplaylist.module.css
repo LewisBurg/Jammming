@@ -1,0 +1,26 @@
+.Playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    max-height: 600px;
+    padding: 1rem 1.16rem;
+    margin: 50px;
+    background-color: rgba(1, 12, 63, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 7px 4px #000000;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+@media only screen and (max-width: 1020px) {
+    .Playlist {
+        width: 90%;
+        margin-top: 2rem;
+    }
+}

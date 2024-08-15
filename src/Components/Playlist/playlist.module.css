@@ -4,9 +4,11 @@
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
-    width: 37%;
+    width: 100%;
+    min-width: 200px;
     max-height: 600px;
     padding: 1rem 1.16rem;
+    margin: 50px;
     background-color: rgba(1, 12, 63, 0.7);
     border-radius: 10px;
     box-shadow: 0 4px 7px 4px #000000;

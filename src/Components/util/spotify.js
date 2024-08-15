@@ -1,5 +1,5 @@
 let accessToken;
-const redirectUrl = "https://lewisburg.github.io/riddimmmselecta/";
+const redirectUrl = "http://localhost:3000/";
 const clientID = "5f82ee64102a46cc97a5a58eb698b777";
 
 const Spotify = {
@@ -89,7 +89,42 @@ const Spotify = {
 
         });
 
-},
+    },
+
+
+    getUserPlaylists() {
+    const accessToken = Spotify.getAccessToken();
+    const header = { Authorization: `Bearer ${accessToken}` };
+
+    return fetch('https://api.spotify.com/v1/me/playlists', {
+        headers: header,
+        method: 'GET'
+    })
+    .then((response) => {
+        if (!response.ok) {
+            console.error(`Request failed with status ${response.status}`);
+            return [];
+        }
+        return response.json();
+    })
+    .then((jsonResponse) => {
+        if (!jsonResponse.items) {
+            console.error("No playlists found or playlists are undefined");
+            return [];
+        }
+        return jsonResponse.items.map((playlist) => ({
+            id: playlist.id,
+            name: playlist.name,
+            owner: playlist.owner.display_name,
+            tracks: playlist.tracks.total
+        }));
+    })
+    .catch((error) => {
+        console.error("Network or other error occurred:", error);
+        return [];
+    });
+}
+
 
 };
 

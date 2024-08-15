@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./App.module.css";
 import SearchResults from "../SearchResults/searchresults";
 import Playlist from "../Playlist/playlist";
 import SearchBar from "../SearchBar/searchbar";
-import { Spotify } from "../util/spotify";
+import UserPlaylist from "../UserPlaylist/userplaylist";
+import {Spotify} from "../util/spotify";
 
 function App() {
   // State for storing the results from a search query
@@ -99,20 +100,24 @@ function App() {
     console.log(term); // Log the search term (for debugging)
   }
 
+
+
+  // Call the renderUserPlaylists function inside the return statement
   return (
     <div>
+      {/* Existing code */}
       <h1>
         Riddi<span className={styles.highlight}>mmm</span>Selecta
       </h1>
       <div className={styles.App}>
-        {/* Add a SearchBar component to allow the user to search for tracks */}
+        {/* Existing code */}
         <SearchBar onSearch={search} />
 
-        <div className={styles['App-playlist']}>
-          {/* Add a SearchResults component to display the search results */}
+        <div className={styles["App-playlist"]}>
+          {/* Existing code */}
           <SearchResults userSearchResults={searchResults} onAdd={addTrack} />
 
-          {/* Add a Playlist component to display the current playlist */}
+          {/* Existing code */}
           <Playlist
             playlistName={playlistName}
             playlistTracks={playlistTracks}
@@ -120,6 +125,9 @@ function App() {
             onNameChange={updatePlaylistName}
             onSave={savePlaylist}
           />
+        
+          <UserPlaylist className={styles["App-playlist"]}/>
+
         </div>
       </div>
     </div>
