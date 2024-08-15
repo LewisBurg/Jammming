@@ -123,7 +123,27 @@ const Spotify = {
         console.error("Network or other error occurred:", error);
         return [];
     });
-}
+    },
+
+    deletePlaylist(playlistId) {
+        const accessToken = Spotify.getAccessToken();
+        const header = { Authorization: `Bearer ${accessToken}` };
+
+        return fetch(`https://api.spotify.com/v1/playlists/${playlistId}/followers`, {
+            headers: header,
+            method: 'DELETE'
+        })
+        .then((response) => {
+            if (!response.ok) {
+                console.error(`Request failed with status ${response.status}`);
+                return;
+            }
+            return response.json();
+        })
+        .catch((error) => {
+            console.error("Network or other error occurred:", error);
+        });
+    }
 
 
 };

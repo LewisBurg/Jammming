@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./App.module.css";
 import SearchResults from "../SearchResults/searchresults";
 import Playlist from "../Playlist/playlist";
@@ -83,6 +83,7 @@ function App() {
   function savePlaylist() {
     const trackURIs = playlistTracks.map((t) => t.uri); // Map tracks to their URIs
 
+  
     // Notify the user that the playlist has been saved (this line is for demonstration)
     alert(`${playlistName} was added to your Spotify account.`);
 
@@ -91,6 +92,7 @@ function App() {
       // Reset playlist name and tracks after saving
       updatePlaylistName("New Playlist");
       setPlaylistTracks([]);
+      window.location.reload(); // Reload the page to show the updated user playlists
     });
   }
 
@@ -125,8 +127,10 @@ function App() {
             onNameChange={updatePlaylistName}
             onSave={savePlaylist}
           />
-        
+         
           <UserPlaylist className={styles["App-playlist"]}/>
+         
+          
 
         </div>
       </div>
