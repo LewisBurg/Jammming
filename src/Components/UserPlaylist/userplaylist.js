@@ -8,6 +8,12 @@ const UserPlaylist = () => {
     // State for storing the user's playlists
     const [userPlaylists, setUserPlaylists] = useState([]);
 
+    // Function to fetch the user's playlists from Spotify
+    function fetchUserPlaylists() {
+        Spotify.getUserPlaylists().then((playlists) => {
+            setUserPlaylists(playlists);
+        });
+    }
 
     // Function to delete a playlist from the user's Spotify account
     function deletePlaylist(playlistId) {
@@ -19,30 +25,32 @@ const UserPlaylist = () => {
         });
     }
 
-    // Fetch the user's playlists when the component mounts
     
 
     // Render the user's playlists in one box
-    const renderUserPlaylists = () => {
+    if (Spotify.getAccessToken()) {
+        const renderUserPlaylists = () => {
+            return (
+                <div className={styles.Playlist}>
+                    {userPlaylists.map((playlist) => (
+                        <div key={playlist.id}>
+                            <h3>{playlist.name} <button className={styles.deleteplaylist} onClick={() => deletePlaylist(playlist.id)}>-</button></h3>
+                            <p>{playlist.description}</p>
+                            
+                        </div>
+                    ))}
+                </div>
+            );
+        };
+
         return (
-            <div className={styles.Playlist}>
-                {userPlaylists.map((playlist) => (
-                    <div key={playlist.id}>
-                        <h3>{playlist.name} <button className={styles.deleteplaylist} onClick={() => deletePlaylist(playlist.id)}>-</button></h3>
-                        <p>{playlist.description}</p>
-                        
-                    </div>
-                ))}
+            <div>
+                {renderUserPlaylists()}
+                {/* Add any additional components or elements here */}
             </div>
         );
-    };
+};
 
-    return (
-        <div>
-            {renderUserPlaylists()}
-            {/* Add any additional components or elements here */}
-        </div>
-    );
 };
 
 export default UserPlaylist;
