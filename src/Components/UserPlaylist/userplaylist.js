@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Spotify } from '../util/spotify';
 import styles from './userplaylist.module.css';
 
@@ -8,12 +8,6 @@ const UserPlaylist = () => {
     // State for storing the user's playlists
     const [userPlaylists, setUserPlaylists] = useState([]);
 
-    // Function to fetch the user's playlists from Spotify
-    function fetchUserPlaylists() {
-        Spotify.getUserPlaylists().then((playlists) => {
-            setUserPlaylists(playlists);
-        });
-    }
 
     // Function to delete a playlist from the user's Spotify account
     function deletePlaylist(playlistId) {
@@ -26,9 +20,7 @@ const UserPlaylist = () => {
     }
 
     // Fetch the user's playlists when the component mounts
-    useEffect(() => {
-        fetchUserPlaylists();
-    }, []);
+    
 
     // Render the user's playlists in one box
     const renderUserPlaylists = () => {
