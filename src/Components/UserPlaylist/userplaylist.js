@@ -8,12 +8,6 @@ const UserPlaylist = () => {
     // State for storing the user's playlists
     const [userPlaylists, setUserPlaylists] = useState([]);
 
-    // Function to fetch the user's playlists from Spotify
-    function fetchUserPlaylists() {
-        Spotify.getUserPlaylists().then((playlists) => {
-            setUserPlaylists(playlists);
-        });
-    }
 
     // Function to delete a playlist from the user's Spotify account
     function deletePlaylist(playlistId) {
@@ -25,10 +19,8 @@ const UserPlaylist = () => {
         });
     }
 
-    
-
     // Render the user's playlists in one box
-    if (Spotify.getAccessToken()) {
+    
         const renderUserPlaylists = () => {
             return (
                 <div className={styles.Playlist}>
@@ -49,7 +41,6 @@ const UserPlaylist = () => {
                 {/* Add any additional components or elements here */}
             </div>
         );
-};
 
 };
 
